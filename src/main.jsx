@@ -39,9 +39,9 @@ const router = createBrowserRouter(
         path="/dashboard"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <Dashboard />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -49,9 +49,9 @@ const router = createBrowserRouter(
         path="/add-product"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <AddProduct />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -59,9 +59,9 @@ const router = createBrowserRouter(
         path="/product-detail/:id"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <ProductDetail />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -69,9 +69,9 @@ const router = createBrowserRouter(
         path="/edit-product/:id"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <EditProduct />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -79,9 +79,9 @@ const router = createBrowserRouter(
         path="/profile"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <Profile />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -89,9 +89,9 @@ const router = createBrowserRouter(
         path="/edit-profile"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <EditProfile />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
@@ -99,9 +99,9 @@ const router = createBrowserRouter(
         path="/contact_us"
         element={
           <Sidebar>
-            {/* <Layout> */}
+            <Layout>
               <Contact />
-            {/* </Layout> */}
+            </Layout>
           </Sidebar>
         }
       />
