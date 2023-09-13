@@ -3,12 +3,13 @@ import { toast } from "react-toastify";
 
 export const BACKEND_URL = import.meta.env.VITE_REACT_API_URL;
 
-const USERS_URL = "https://inventory-vysint-api.onrender.com/api/users";
-
 // Register user
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post(`${USERS_URL}/register`, userData);
+    const response = await axios.post(
+      `${BACKEND_URL}/api/users/register`,
+      userData
+    );
     if ((response.statusText = "OK")) {
       toast.success("User Registered successfully");
     }
@@ -33,7 +34,7 @@ export const validateEmail = (email) => {
 export const loginUser = async (userData) => {
   try {
     const response = await axios.post(
-      `${USERS_URL}/login`,
+      `${BACKEND_URL}/api/users/login`,
       userData
     );
     if ((response.statusText = "OK")) {
@@ -53,7 +54,7 @@ export const loginUser = async (userData) => {
 
 export const logoutUser = async () => {
   try {
-    await axios.get(`${USERS_URL}/logout`);
+    await axios.get(`${BACKEND_URL}/api/users/logout`);
   } catch (err) {
     const message =
       (err.response && err.response.data && err.response.data.message) ||
@@ -67,7 +68,7 @@ export const logoutUser = async () => {
 export const forgotPassword = async (userData) => {
   try {
     const response = await axios.post(
-      `${USERS_URL}/forgotpassword`,
+      `${BACKEND_URL}/api/users/forgotpassword`,
       userData
     );
     toast.success(response.data.message);
@@ -84,7 +85,7 @@ export const forgotPassword = async (userData) => {
 export const resetPassword = async (userData, resetToken) => {
   try {
     const response = await axios.put(
-      `${USERS_URL}/resetpassword/${resetToken}`,
+      `${BACKEND_URL}/api/users/resetpassword/${resetToken}`,
       userData
     );
     return response.data;
@@ -100,7 +101,7 @@ export const resetPassword = async (userData, resetToken) => {
 // Get Login Status
 export const loginStatus = async (e) => {
   try {
-    const response = await axios.get(`${USERS_URL}/loggedin`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
     return response.data;
   } catch (err) {
     (err.response && err.response.data && err.response.data.message) ||
@@ -113,7 +114,7 @@ export const loginStatus = async (e) => {
 // Get user Profile
 export const getUserProfile = async () => {
   try {
-    const response = await axios.get(`${USERS_URL}/profile`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/profile`);
     return response.data;
   } catch (err) {
     (err.response && err.response.data && err.response.data.message) ||
@@ -127,7 +128,7 @@ export const getUserProfile = async () => {
 export const updateUserProfile = async (userData) => {
   try {
     const response = await axios.patch(
-      `${USERS_URL}/updateuser`,
+      `${BACKEND_URL}/api/users/updateuser`,
       userData
     );
     return response.data;
@@ -144,7 +145,7 @@ export const updateUserProfile = async (userData) => {
 export const changePassword = async (userData) => {
   try {
     const response = await axios.patch(
-      `${USERS_URL}/changepassword`,
+      `${BACKEND_URL}/api/users/changepassword`,
       userData
     );
     return response.data;

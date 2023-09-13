@@ -6,11 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    proxy: {
-      "/api": {
-        target: "https://inventory-vysint-api.onrender.com",
-        changeOrigin: true,
-      },
-    },
+    // proxy: {
+      
+    // }
   },
 });
