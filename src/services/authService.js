@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export const BACKEND_URL = import.meta.env.VITE_REACT_API_URL;
 
-const USERS_URL = "/api/users";
+const USERS_URL = "https://inventory-vysint-api.onrender.com/api/users";
 
 // Register user
 export const registerUser = async (userData) => {
